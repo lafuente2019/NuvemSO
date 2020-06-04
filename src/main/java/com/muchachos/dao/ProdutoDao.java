@@ -97,7 +97,7 @@ public class ProdutoDao {
 
     public static List<Produto> buscar(String busca) throws SQLException, Exception {
         String sql = "SELECT * FROM TB_PRODUTO WHERE upper(nome) like ? or upper(categoria) like ?";
-        busca = busca + '%';
+       busca = '%' + busca + '%';
 
         List<Produto> listaProduto = null;
         Connection conexao = null;
@@ -132,16 +132,7 @@ public class ProdutoDao {
         } catch (SQLException e) {
             e.getMessage();
             System.out.println(e);
-        } finally {
-            if (rs != null && !rs.isClosed()) {
-                rs.close();
-            }
-            if (ps != null && !ps.isClosed()) {
-                ps.close();
-            }
-            if (conexao != null && !conexao.isClosed()) {
-                conexao.close();
-            }
+        
         }
         return listaProduto;
     }
@@ -183,17 +174,7 @@ public class ProdutoDao {
         } catch (SQLException e) {
             e.getMessage();
             System.out.println(e);
-        } finally {
-            if (rs != null && !rs.isClosed()) {
-                rs.close();
-            }
-            if (ps != null && !ps.isClosed()) {
-                ps.close();
-            }
-            if (conexao != null && !conexao.isClosed()) {
-                conexao.close();
-            }
-        }
+        } 
         return listaProduto;
     }
 

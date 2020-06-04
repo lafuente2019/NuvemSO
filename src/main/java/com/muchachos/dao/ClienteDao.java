@@ -49,16 +49,11 @@ public class ClienteDao extends ConexaoDatabase{
             preparedStatement.setString(16, normal.removeAcento(cliente.getComplemento()));
             preparedStatement.execute();
         
-        } finally {
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        } catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
+      }
     }
-    
     public List<Cliente> listar() throws ClassNotFoundException, SQLException {
         String sql = "SELECT id, nome, sexo, nascimento, estado_civil, status, rg, "
                 + "cpf, email, telefone, estado, cidade, bairro, cep, logradouro, "
@@ -101,17 +96,11 @@ public class ClienteDao extends ConexaoDatabase{
                 
                 listaClientes.add(cliente);
             }
-        }finally{
-            if(result != null && !result.isClosed()){
-                result.close();
-            }
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        }catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
+         }              
+        
         return listaClientes;
     }
     
@@ -157,17 +146,10 @@ public class ClienteDao extends ConexaoDatabase{
                 
                 listaClientes.add(cliente);
             }
-        }finally{
-            if(result != null && !result.isClosed()){
-                result.close();
-            }
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        }catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
+        }               
         return listaClientes;
     }
     
@@ -207,20 +189,13 @@ public class ClienteDao extends ConexaoDatabase{
                 
                 return cliente;
             }
-        }finally{
-            if(result != null && !result.isClosed()){
-                result.close();
-            }
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        }catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+        		System.out.println(e);
+        }               
         return null;
-    }
-    
+     }
+   
     public Cliente obter2(String cpf) throws ClassNotFoundException, SQLException {
         String sql = "SELECT * FROM TB_CLIENTE WHERE CPF =? AND STATUS <> 'Inativo'";
         
@@ -257,16 +232,9 @@ public class ClienteDao extends ConexaoDatabase{
                 
                 return cliente;
             }
-        }finally{
-            if(result != null && !result.isClosed()){
-                result.close();
-            }
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
+        }catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
         }
         return null;
     }
@@ -307,15 +275,9 @@ public class ClienteDao extends ConexaoDatabase{
 
             //Executa o comando no banco de dados
             preparedStatement.executeUpdate();
-        } finally {
-            //Se o statement ainda estiver aberto, realiza seu fechamento
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            //Se a conexão ainda estiver aberta, realiza seu fechamento
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
+        }catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
         }
     }
     
@@ -332,15 +294,9 @@ public class ClienteDao extends ConexaoDatabase{
 
             //Executa o comando no banco de dados
             preparedStatement.executeUpdate();
-        } finally {
-            //Se o statement ainda estiver aberto, realiza seu fechamento
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            //Se a conexão ainda estiver aberta, realiza seu fechamento
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        } catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
     }
+  }
 }

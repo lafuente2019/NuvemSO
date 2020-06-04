@@ -385,5 +385,6 @@ $(function () {
             });
             console.log("Venda cadastrada!" + response);//retorno no log para verificação
         });
+        
     });
 });

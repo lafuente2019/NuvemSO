@@ -136,7 +136,7 @@ public class FuncionarioDao {
   
 	 public static List<Funcionario> buscar(String busca)throws SQLException, Exception {
 		   String sql = "SELECT * FROM TB_COLABORADOR WHERE  upper(nome) like ? or upper(cpf) like ?";
-		  busca = busca+ '%';
+		  busca = '%' +busca+ '%';
 		  
 		  List <Funcionario> listaFuncionario = null;
 		  
@@ -174,16 +174,6 @@ public class FuncionarioDao {
 		} catch (Exception e) {
 			e.getMessage();
 			System.out.println(e);
-		}finally {
-			if(rs != null && !rs.isClosed()) {
-				rs.close();
-			}
-			if(ps != null && !ps.isClosed()) {
-				ps.close();
-			}
-			if(conexao != null && !conexao.isClosed()) {
-				conexao.close();
-			}
 		}
 		  return listaFuncionario;
 	}

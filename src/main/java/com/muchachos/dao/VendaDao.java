@@ -39,15 +39,10 @@ public class VendaDao {
             preparedStatement.setFloat(10, venda.getDesconto());
             preparedStatement.setFloat(11, venda.getTroco());
             preparedStatement.execute();
-        } finally {
-            
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        } catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
+         }              
     }
     
     public static Integer obterUltima() throws ClassNotFoundException, SQLException {
@@ -68,17 +63,10 @@ public class VendaDao {
                 
                 return qtdVendas;
             }
-        }finally{
-            if(result != null && !result.isClosed()){
-                result.close();
-            }
-            if (preparedStatement != null && !preparedStatement.isClosed()) {
-                preparedStatement.close();
-            }
-            if (connection != null && !connection.isClosed()) {
-                connection.close();
-            }
-        }
+        }catch (ClassNotFoundException | SQLException e) {
+			e.getMessage();
+			System.out.println(e);
+         }              
         return null;
     }
 }
