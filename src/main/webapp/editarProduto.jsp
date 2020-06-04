@@ -153,12 +153,11 @@
                 <div class="botoes">
 	          <div class="row">
                     <div class=" offset-md-8 col-sm-2">
-                  <!--Botão Limpar-->
-	               <input type="reset" value="Limpar" class="btn btn btn-danger btn-block">						
+                 					
 	            </div>
 	           <div class="col-sm-2">
 	          <!--Botão Salvar-->
-	        <input type="submit" value="Salvar" class="btn btn-success btn-block">
+	        <input type="submit" value="Atualizar" class="btn btn-success btn-block">
   	     </div>
 	   </div><!--Fim da linha 4-->
          </div><!--Fim classe botoes-->

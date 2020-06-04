@@ -17,7 +17,7 @@ public class ProdutoDao {
 
     public List<Produto> getProduto() throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, quantidade, descricao, categoria, status From tb_produto");
+        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, quantidade, descricao, categoria, status From TB_PRODUTO");
 
         ResultSet rs = ps.executeQuery();
         List<Produto> produtos = new ArrayList();
@@ -30,7 +30,7 @@ public class ProdutoDao {
 
     public void salvar(Produto produto) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement statement = conexao.prepareStatement("insert into tb_produto (nome, preco, quantidade, descricao, categoria, status)" + "values(?,?,?,?,?,?)");
+        PreparedStatement statement = conexao.prepareStatement("insert into TB_PRODUTO (nome, preco, quantidade, descricao, categoria, status)" + "values(?,?,?,?,?,?)");
 
         statement.setString(1, produto.getNome());
         statement.setFloat(2, produto.getPreco());
@@ -43,7 +43,7 @@ public class ProdutoDao {
 
     public List<Produto> getProduto1() throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, preco, quantidade, categoria, status from tb_produto");
+        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, preco, quantidade, categoria, status from TB_PRODUTO");
 
         ResultSet rs = ps.executeQuery();
         List<Produto> produtos = new ArrayList();
@@ -60,7 +60,7 @@ public class ProdutoDao {
 
     public void excluir(Integer cod) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement statement = conexao.prepareStatement("DELETE FROM tb_produto WHERE id = ?");
+        PreparedStatement statement = conexao.prepareStatement("DELETE FROM TB_PRODUTO WHERE id = ?");
 
         statement.setInt(1, cod);
         statement.execute();
@@ -68,7 +68,7 @@ public class ProdutoDao {
 
     public Produto getProdutoId(Integer cod) throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, preco,quantidade,descricao,categoria,status FROM tb_produto WHERE id=?");
+        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, preco,quantidade,descricao,categoria,status FROM TB_PRODUTO WHERE id=?");
         ps.setInt(1, cod);
         ResultSet rs = ps.executeQuery();
 
@@ -83,7 +83,7 @@ public class ProdutoDao {
     public void atualizar(Produto produto) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement statement = conexao.prepareStatement(
-                " UPDATE tb_produto  SET nome=?, preco=?, quantidade=?, descricao=?, categoria=?, status=? WHERE id=?");
+                " UPDATE TB_PRODUTO  SET nome=?, preco=?, quantidade=?, descricao=?, categoria=?, status=? WHERE id=?");
 
         statement.setString(1, produto.getNome());
         statement.setFloat(2, produto.getPreco());
@@ -96,7 +96,7 @@ public class ProdutoDao {
     }
 
     public static List<Produto> buscar(String busca) throws SQLException, Exception {
-        String sql = "SELECT * FROM tb_produto WHERE upper(nome) like ? or upper(categoria) like ?";
+        String sql = "SELECT * FROM TB_PRODUTO WHERE upper(nome) like ? or upper(categoria) like ?";
         busca = busca + '%';
 
         List<Produto> listaProduto = null;
@@ -147,7 +147,7 @@ public class ProdutoDao {
     }
     
     public static List<Produto> buscarDireito(String busca) throws SQLException, Exception {
-        String sql = "SELECT * FROM tb_produto WHERE upper(nome) like ? or upper(categoria) like ?";
+        String sql = "SELECT * FROM TB_PRODUTO WHERE upper(nome) like ? or upper(categoria) like ?";
         busca = '%' + busca + '%';
 
         List<Produto> listaProduto = null;
