@@ -46,26 +46,26 @@
                 </div>
             </div>
         </div>
-        <!--BARRA NAVEGACAO LATERAL-->
+       <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
-                <li><a class="item-linha" href="#"><span class="fas fa-shopping-cart mr-4"></span> Venda</a></li>
-                <li><a class="item-linha" href="#"><span class="fas fa-user-plus mr-4"></span>Cadastro de Cliente</a></li>
-                <li><a class="item-linha" href="#"><span class="fas fa-users mr-4"></span>Consulta de Cliente</a></li>
+                <li><a class="item-linha" href="venda.jsp"><span class="fas fa-shopping-cart mr-4"></span> Venda</a></li>
+                <li><a class="item-linha" href="cadastroCliente.jsp"><span class="fas fa-user-plus mr-4"></span>Cadastro de Cliente</a></li>
+                <li><a class="item-linha" href="consultaCliente.jsp"><span class="fas fa-users mr-4"></span>Consulta de Cliente</a></li>
                 <p>Marketing</p>
                 <li><a class="item-linha" href="cadastroProduto.jsp"><span class="fas fa-pump-soap mr-4"></span> Cadastro de Produto</a></li>
                 <li><a class="item-linha" href="consultaProdutoServlet"><span class="fas fa-search mr-4"></span>Consulta de Produto</a></li>
-                <li><a class="item-linha" href="#"><span class="fas fa-users mr-3"></span> Consulta de Cliente</a></li>
+                <li><a class="item-linha" href="consultaCliente.jsp"><span class="fas fa-users mr-3"></span> Consulta de Cliente</a></li>
                 <p>Tecnologia da Informação</p>
                 <li><a class="item-linha" href="cadastroFuncionario.jsp"><span class="fas fa-user-tie mr-4"></span> Cadastro de Colaborador</a></li>
                 <li><a class="item-linha" href="consultaFuncionarioServlet"><span class="fas fa-user-edit mr-3"></span> Consulta de Colaborador</a></li>
                 <p>Recursos Humanos</p>
                 <li><a class="item-linha" href="consultaFuncionarioServlet"><span class="fas fa-user-edit mr-3"></span> Consulta de Colaborador</a></li>
                 <p>Gerência</p>
-                <li><a class="item-linha" href="#"><span class="fas fa-chart-line mr-3"></span> Relatório Filial</a></li>
+                <li><a class="item-linha" href="relatorio.jsp"><span class="fas fa-chart-line mr-3"></span> Relatório Filial</a></li>
                 <p>Diretoria</p>
-                <li><a class="item-linha" href="#"><span class="fas fa-chart-bar mr-3"></span> Relatório Geral</a></li>
+                <li><a class="item-linha" href="relatorio.jsp"><span class="fas fa-chart-bar mr-3"></span> Relatório Geral</a></li>
             </ul>
         </div>
         <!--CONTEUDO DA PAGINA-->
@@ -137,33 +137,27 @@
                     </div><!--Fim Desricao-->
                 </div><!--Fim da linha 3-->
                 <!--Linha 4-->
-                <div class="botoes">
+               <div class="botoes">
                     <div class="row">
-                        <!--Botão Limpar-->
                         <div class=" offset-md-8 col-sm-2">
+                            <!--Botão Limpar-->
                             <input type="reset" value="Limpar" class="btn btn btn-danger btn-block">						
-                        </div><!--Fim Botão Limpar-->
-                        <!--Botão Salvar-->
+                        </div>
                         <div class="col-sm-2">
+                            <!--Botão Salvar-->
                             <input type="submit" value="Salvar" class="btn btn-success btn-block">
-                        </div><!--Fim Botão Salvar-->
+                        </div>
                     </div><!--Fim da linha 4-->
                 </div><!--Fim classe botoes-->
             </form><!--Fim do formulário-->
         </div><!--Fim do conteudo da pagina-->
 
-        <!--1-jQuery.js-->
+         <!--1-jQuery.js-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!--2-Popper.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <!--3-Bootstrap.js-->
+        <!--3-Bootstrap.js -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!--5-Mask Money Plugin-->
-        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
-        <!--6-Mask Plugin-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
-        <!--7-Específica da página-->
         <script type="text/javascript" src="js/start.js"></script>
-        <script type="text/javascript" src="js/validacao.js"></script>
     </body>
 </html>
