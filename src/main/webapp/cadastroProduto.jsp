@@ -82,7 +82,7 @@
                     <div class="col-sm-10 col-md-10">
                         <div class="form-group">
                             <label for="nome">Nome do Produto</label>
-                            <input id="nome" name="nome" maxlength="40" type="text" pattern="^[a-zA-Z][a-zA-Z-_\.]{1,20}$" class="form-control" required >
+                            <input id="nome" name="nome" maxlength="40" type="text" class="form-control" required >
                         </div>
                     </div><!--Fim do Nome do Produto-->
                     <!--Ativo-->

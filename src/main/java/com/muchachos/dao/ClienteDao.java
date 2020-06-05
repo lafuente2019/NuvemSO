@@ -282,7 +282,7 @@ public class ClienteDao extends ConexaoDatabase{
     }
     
     public void excluir(Integer id) throws ClassNotFoundException, SQLException {
-        String sql = "UPDATE TB_CLIENTE SET STATUS = 'Inativo' WHERE id = ?";         
+        String sql = "DELETE FROM TB_CLIENTE WHERE id = ?";         
              
         Connection connection = null;
         PreparedStatement preparedStatement = null;

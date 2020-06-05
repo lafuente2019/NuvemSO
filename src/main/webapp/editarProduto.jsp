@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-       <!--BARRA NAVEGACAO LATERAL-->
+        <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
@@ -71,24 +71,14 @@
         <!--CONTEUDO DA PAGINA-->
         <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
         <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-              
+
             <!--Formulário Geral-->
             <form  action="produtoServlet" method="post">
-              
+
                 <h1 class="titulo-formulario">Gerenciamento de Produto</h1> 
                 <!--Linha 1-->
                 <div class="row linha-do-nome">
-
-                    <div class="col-md-11 col-sm-11">
-                        <input type="hidden" name="id" value="${produto.id}">
-                    </div>
-                       <!--ID do Produto-->
-                    <div class="col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <label for="id">ID</label>
-                            <input id="id" name="id" disabled type="text" class="form-control" value="${produto.id}" required>
-                        </div>
-                    </div><!--Fim do ID do Produto-->
+                    <input type="hidden" name="id" value="${produto.id}">
                     <!--Nome do Produto-->
                     <div class="col-sm-10 col-md-10">
                         <div class="form-group">
@@ -143,24 +133,24 @@
                     <!--Descricao-->
                     <div class="col-sm-12" >
                         <div class="form-group">
-                           <label for="quantidade">Descrição</label> 
-			   <input id="descricao" name="descricao" type="text" class="form-control" value="${produto.descricao}" required>
+                            <label for="quantidade">Descrição</label> 
+                            <input id="descricao" name="descricao" type="text" class="form-control" value="${produto.descricao}" required>
                         </div>
                     </div><!--Fim Desricao-->
                 </div><!--Fim da linha 3-->
                 <!--Linha 4-->
-                 <!--Linha 6-->
+                <!--Linha 6-->
                 <div class="botoes">
-	          <div class="row">
-                    <div class=" offset-md-8 col-sm-2">
-                 					
-	            </div>
-	           <div class="col-sm-2">
-	          <!--Botão Salvar-->
-	        <input type="submit" value="Atualizar" class="btn btn-success btn-block">
-  	     </div>
-	   </div><!--Fim da linha 4-->
-         </div><!--Fim classe botoes-->
+                    <div class="row">
+                        <div class=" offset-md-8 col-sm-2">
+
+                        </div>
+                        <div class="col-sm-2">
+                            <!--Botão Salvar-->
+                            <input type="submit" value="Atualizar" class="btn btn-success btn-block">
+                        </div>
+                    </div><!--Fim da linha 4-->
+                </div><!--Fim classe botoes-->
             </form><!--Fim do formulário-->
         </div><!--Fim do conteudo da pagina-->
 

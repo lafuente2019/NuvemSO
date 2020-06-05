@@ -23,6 +23,7 @@
         <!--EspecÃ­fica da PÃ¡gina-->
         <link href="css/start.css" rel="stylesheet">
         <link href="css/consultas.css" rel="stylesheet">
+        <link href="css/componentes.css" rel="stylesheet">
 
         <!-- 
          <link href="css/componentes.css" rel="stylesheet">

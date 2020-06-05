@@ -22,6 +22,7 @@
         <link href="css/start.css" rel="stylesheet">
         <!--  <link href="css/componentes.css" rel="stylesheet"> -->
         <link href="css/consultas.css" rel="stylesheet">
+        <link href="css/componentes.css" rel="stylesheet">
         <!--Titulo e icone-->
         <link rel="shortcut icon" href="img/logo-branco.png"/>
         <title>Perfumaria Muchachos: Consulta Produto</title>
@@ -73,8 +74,7 @@
         <!--CONTEUDO DA PAGINA-->
         <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
         <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-            <h1 class="titulo-formulario">${mensagem}</h1>
-            <h1>Consulta de Produtos</h1>
+            <h1>Consulta de Produtos</h1> 
             <!--Formul�rio-->
             <form clas="formulario" action="buscaProdutoServlet" method="get">    
                 <!--Linha 1-->
