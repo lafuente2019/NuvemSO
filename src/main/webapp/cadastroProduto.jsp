@@ -65,16 +65,14 @@
                 <p>Recursos Humanos</p>
                 <li><a class="item-linha" href="consultaFuncionarioServlet"><span class="fas fa-user-edit mr-3"></span> Consulta de Colaborador</a></li>
                 <p>Gerência</p>
-                <li><a class="item-linha" href="relatorio.jsp"><span class="fas fa-chart-line mr-3"></span> Relatório Filial</a></li>
+                <li><a class="item-linha" href="relatorios.jsp"><span class="fas fa-chart-line mr-3"></span> Relatório Filial</a></li>
                 <p>Diretoria</p>
-                <li><a class="item-linha" href="relatorio.jsp"><span class="fas fa-chart-bar mr-3"></span> Relatório Geral</a></li>
+                <li><a class="item-linha" href="relatorios.jsp"><span class="fas fa-chart-bar mr-3"></span> Relatório Geral</a></li>
             </ul>
         </div>
         <!--CONTEUDO DA PAGINA-->
         <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
         <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-
-            <h1 class="titulo-formulario">${mensagem}</h1>
             <h1>Cadastro de Produto</h1> 
             <!--Formulário Geral-->
             <form  action="produtoServlet" method="post" id="formulario" class="formulario">
@@ -84,7 +82,7 @@
                     <div class="col-sm-10 col-md-10">
                         <div class="form-group">
                             <label for="nome">Nome do Produto</label>
-                            <input id="nome" name="nome" maxlength="40" type="text" class="form-control" required >
+                            <input id="nome" name="nome" type="text" class="form-control" maxlength="20" placeholder="Exemplo.: Ferrari black" required="">
                         </div>
                     </div><!--Fim do Nome do Produto-->
                     <!--Ativo-->
@@ -105,7 +103,6 @@
                         <div class="form-group">
                             <label for="categoria">Categoria</label>
                             <select id="categoria" name="categoria" class="form-control" required>
-                                <option>Selecione</option>
                                 <option value="beleza">Beleza</option>
                                 <option value="cosmeticos">Cosmeticos</option>
                                 <option value="perfumes">Perfumes</option>
@@ -117,14 +114,14 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="preco">Preço</label>
-                            <input id="preco" name="preco" type="text" class="form-control mascara-decimais" required >
+                            <input id="preco" name="preco" type="number" class="form-control mascara-decimais" maxlength="6" placeholder="Exemplo.: 250.00" required >
                         </div>
                     </div><!--Fim do preco-->
                     <!--Quantidade-->
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label for="quantidade">Quantidade</label>
-                            <input id="quantidade" name="quantidade" type="number" class="form-control mascara-numero" required>
+                            <input id="quantidade" name="quantidade" type="number" class="form-control mascara-numero" maxlength="6" placeholder="Exemplo.: 1359" required>
                         </div>
                     </div><!--Fim Quantidade-->
                 </div><!--Fim da linha 2-->
@@ -134,21 +131,21 @@
                     <div class="col-sm-12" >
                         <div class="form-group">
                             <label for="quantidade">Descrição</label> 
-                            <input id="descricao" name="descricao" type="text" class="form-control"  required>
+                            <input id="descricao" name="descricao" type="text" class="form-control" maxlength="200" placeholder="Exemplo.: Produto para tratamento capilar" required>
                         </div>
                     </div><!--Fim Desricao-->
                 </div><!--Fim da linha 3-->
                 <!--Linha 4-->
                 <div class="botoes">
                     <div class="row">
+                        <!--Botão Limpar-->
                         <div class=" offset-md-8 col-sm-2">
-                            <!--Botão Limpar-->
                             <input type="reset" value="Limpar" class="btn btn btn-danger btn-block">						
-                        </div>
+                        </div><!--Fim Botão Limpar-->
+                        <!--Botão Salvar-->
                         <div class="col-sm-2">
-                            <!--Botão Salvar-->
                             <input type="submit" value="Salvar" class="btn btn-success btn-block">
-                        </div>
+                        </div><!--Fim Botão Salvar-->
                     </div><!--Fim da linha 4-->
                 </div><!--Fim classe botoes-->
             </form><!--Fim do formulário-->
@@ -158,8 +155,14 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!--2-Popper.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <!--3-Bootstrap.js -->
+        <!--3-Bootstrap.js-->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--5-Mask Money Plugin-->
+        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
+        <!--6-Mask Plugin-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+        <!--7-Específica da página-->
         <script type="text/javascript" src="js/start.js"></script>
+        <script type="text/javascript" src="js/validacao.js"></script>
     </body>
 </html>

@@ -20,9 +20,6 @@
         <!--Específica da Página-->
         <link href="css/start.css" rel="stylesheet">
         <!--Titulo e icone-->
-    <a  href="start.jsp">
-        <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
-    </a>
     <title>Perfumaria Muchachos: Início do sistema</title>
 </head>
 <body>
@@ -34,7 +31,9 @@
             </div>
             <div class="col-lg-3 col-sm-3"><!--LOGO CABEÇALHO-->
                 <!--Colorir logo efeito em jquery - usa-se o id #logocab-->
+              <a  href="start.jsp">
                 <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+              </a>		
             </div>
             <div class="col-lg-3 col-sm-3"><!--HORA E DATA-->
                 <h1 id="calendario"></h><!--Data e calendario feito em jquery - usa-se o id #calendario-->
