@@ -33,7 +33,9 @@
                 </div>
                 <div class="col-lg-3 col-sm-3"><!--LOGO CABEÇALHO-->
                     <!--Colorir logo efeito em jquery - usa-se o id #logocab-->
-                    <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    <a  href="start.jsp">
+                        <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    </a>
                 </div>
                 <div class="col-lg-3 col-sm-3"><!--HORA E DATA-->
                     <h1 id="calendario"></h><!--Data e calendario feito em jquery - usa-se o id #calendario-->
@@ -46,7 +48,7 @@
                 </div>
             </div>
         </div>
-       <!--BARRA NAVEGACAO LATERAL-->
+        <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
@@ -249,19 +251,15 @@
                 <!--Linha 5-->
                 <div class="botoes">
                     <div class="row">
-                        <!--Botão Limpar-->
-                        <div class=" offset-md-8 col-sm-2">
-                            <input type="reset" value="Limpar" class="btn btn btn-danger btn-block">            
-                        </div><!--Fim Botão Limpar-->
                         <!--Botão Salvar-->
-                        <div class="col-sm-2">
+                        <div class="offset-md-10 col-sm-2">
                             <input id="btn-salvar" type="submit" value="Atualizar" class="btn btn-success btn-block">
                         </div><!--Fim Botão Salvar-->
                     </div><!--Fim Linha 5-->
                 </div><!--Fim classe botoes-->
             </form><!--Fim do Form-->
         </div><!--Fim do conteudo da pagina-->
-        
+
         <!--1-jQuery.js-->
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <!--2-Popper.js-->

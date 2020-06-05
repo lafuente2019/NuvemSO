@@ -33,7 +33,9 @@
                 </div>
                 <div class="col-lg-3 col-sm-3"><!--LOGO CABEÇALHO-->
                     <!--Colorir logo efeito em jquery - usa-se o id #logocab-->
-                    <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    <a  href="start.jsp">
+                        <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    </a>
                 </div>
                 <div class="col-lg-3 col-sm-3"><!--HORA E DATA-->
                     <h1 id="calendario"></h><!--Data e calendario feito em jquery - usa-se o id #calendario-->
@@ -46,17 +48,17 @@
                 </div>
             </div>
         </div>
-       <!--BARRA NAVEGACAO LATERAL-->
+        <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
                 <li><a class="item-linha" href="venda.jsp"><span class="fas fa-shopping-cart mr-4"></span> Venda</a></li>
                 <li><a class="item-linha" href="cadastroCliente.jsp"><span class="fas fa-user-plus mr-4"></span>Cadastro de Cliente</a></li>
-                <li><a class="item-linha" href="consultaCliente.jsp"><span class="fas fa-users mr-4"></span>Consulta de Cliente</a></li>
+                <li><a class="item-linha" href="ConsultarClienteServlet"><span class="fas fa-users mr-4"></span>Consulta de Cliente</a></li>
                 <p>Marketing</p>
                 <li><a class="item-linha" href="cadastroProduto.jsp"><span class="fas fa-pump-soap mr-4"></span> Cadastro de Produto</a></li>
                 <li><a class="item-linha" href="consultaProdutoServlet"><span class="fas fa-search mr-4"></span>Consulta de Produto</a></li>
-                <li><a class="item-linha" href="consultaCliente.jsp"><span class="fas fa-users mr-3"></span> Consulta de Cliente</a></li>
+                <li><a class="item-linha" href="ConsultarClienteServlet"><span class="fas fa-users mr-3"></span> Consulta de Cliente</a></li>
                 <p>Tecnologia da Informação</p>
                 <li><a class="item-linha" href="cadastroFuncionario.jsp"><span class="fas fa-user-tie mr-4"></span> Cadastro de Colaborador</a></li>
                 <li><a class="item-linha" href="consultaFuncionarioServlet"><span class="fas fa-user-edit mr-3"></span> Consulta de Colaborador</a></li>
@@ -71,12 +73,12 @@
         <!--CONTEUDO DA PAGINA-->
         <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
         <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-            
+
             <h1 class="titulo-formulario">${mensagem}</h1>
             <h1>Cadastro de Produto</h1> 
             <!--Formulário Geral-->
-            <form  action="produtoServlet" method="post">
-                 <!--Linha 1-->
+            <form  action="produtoServlet" method="post" id="formulario" class="formulario">
+                <!--Linha 1-->
                 <div class="row linha-do-nome">
                     <!--Nome do Produto-->
                     <div class="col-sm-10 col-md-10">
@@ -128,16 +130,16 @@
                 </div><!--Fim da linha 2-->
                 <!--Linha 3-->
                 <div class="row">
-                  <!--Descricao-->
+                    <!--Descricao-->
                     <div class="col-sm-12" >
                         <div class="form-group">
-                           <label for="quantidade">Descrição</label> 
-			   <input id="descricao" name="descricao" type="text" class="form-control"  required>
+                            <label for="quantidade">Descrição</label> 
+                            <input id="descricao" name="descricao" type="text" class="form-control"  required>
                         </div>
                     </div><!--Fim Desricao-->
                 </div><!--Fim da linha 3-->
                 <!--Linha 4-->
-               <div class="botoes">
+                <div class="botoes">
                     <div class="row">
                         <div class=" offset-md-8 col-sm-2">
                             <!--Botão Limpar-->
@@ -152,7 +154,7 @@
             </form><!--Fim do formulário-->
         </div><!--Fim do conteudo da pagina-->
 
-         <!--1-jQuery.js-->
+        <!--1-jQuery.js-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!--2-Popper.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

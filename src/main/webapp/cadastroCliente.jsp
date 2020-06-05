@@ -33,7 +33,9 @@
                 </div>
                 <div class="col-lg-3 col-sm-3"><!--LOGO CABEÇALHO-->
                     <!--Colorir logo efeito em jquery - usa-se o id #logocab-->
-                    <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    <a  href="start.jsp">
+                        <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    </a>
                 </div>
                 <div class="col-lg-3 col-sm-3"><!--HORA E DATA-->
                     <h1 id="calendario"></h><!--Data e calendario feito em jquery - usa-se o id #calendario-->
@@ -46,17 +48,17 @@
                 </div>
             </div>
         </div>
-       <!--BARRA NAVEGACAO LATERAL-->
+        <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
                 <li><a class="item-linha" href="venda.jsp"><span class="fas fa-shopping-cart mr-4"></span> Venda</a></li>
                 <li><a class="item-linha" href="cadastroCliente.jsp"><span class="fas fa-user-plus mr-4"></span>Cadastro de Cliente</a></li>
-                <li><a class="item-linha" href="consultaCliente.jsp"><span class="fas fa-users mr-4"></span>Consulta de Cliente</a></li>
+                <li><a class="item-linha" href="ConsultarClienteServlet"><span class="fas fa-users mr-4"></span>Consulta de Cliente</a></li>
                 <p>Marketing</p>
                 <li><a class="item-linha" href="cadastroProduto.jsp"><span class="fas fa-pump-soap mr-4"></span> Cadastro de Produto</a></li>
                 <li><a class="item-linha" href="consultaProdutoServlet"><span class="fas fa-search mr-4"></span>Consulta de Produto</a></li>
-                <li><a class="item-linha" href="#"><span class="fas fa-users mr-3"></span> Consulta de Cliente</a></li>
+                <li><a class="item-linha" href="ConsultarClienteServlet"><span class="fas fa-users mr-3"></span> Consulta de Cliente</a></li>
                 <p>Tecnologia da Informação</p>
                 <li><a class="item-linha" href="cadastroFuncionario.jsp"><span class="fas fa-user-tie mr-4"></span> Cadastro de Colaborador</a></li>
                 <li><a class="item-linha" href="consultaFuncionarioServlet"><span class="fas fa-user-edit mr-3"></span> Consulta de Colaborador</a></li>
@@ -256,7 +258,7 @@
                 </div><!--Fim classe botoes-->
             </form><!--Fim do Form-->
         </div><!--Fim do conteudo da pagina-->
-        
+
         <!--MODAL-->
         <div class="modal fade modal" id="modalMensagem" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
@@ -273,25 +275,25 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger btn-sm fechar-modal"><!--data-dismiss="modal"-->
                             <span class="fas fa-times mr-2"></span>Fechar
-                        <button
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!--1-jQuery.js-->
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <!--2-Popper.js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <!--3-Bootstrap.js -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <!--4-Mask Money Plugin-->
-        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
-        <!--5-Mask CPF Plugin-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
-        <!--6-Específica da página-->
-        <script type="text/javascript" src="js/start.js"></script>
-        <script type="text/javascript" src="js/cadastroCliente.js"></script>
-        <script type="text/javascript" src="js/validacao.js"></script>
-    </body>
-</html>
+                            <button
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+
+                                <!--1-jQuery.js-->
+                                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                                <!--2-Popper.js-->
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                                <!--3-Bootstrap.js -->
+                                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                                <!--4-Mask Money Plugin-->
+                                <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
+                                <!--5-Mask CPF Plugin-->
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+                                <!--6-Específica da página-->
+                                <script type="text/javascript" src="js/start.js"></script>
+                                <script type="text/javascript" src="js/cadastroCliente.js"></script>
+                                <script type="text/javascript" src="js/validacao.js"></script>
+                                </body>
+                                </html>

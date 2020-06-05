@@ -57,7 +57,7 @@ public class ClienteDao extends ConexaoDatabase{
     public List<Cliente> listar() throws ClassNotFoundException, SQLException {
         String sql = "SELECT id, nome, sexo, nascimento, estado_civil, status, rg, "
                 + "cpf, email, telefone, estado, cidade, bairro, cep, logradouro, "
-                + "numero, complemento FROM TB_CLIENTE WHERE STATUS <> 'Inativo'";
+                + "numero, complemento FROM TB_CLIENTE";
         
         List<Cliente> listaClientes = new ArrayList<>();
         
@@ -197,7 +197,7 @@ public class ClienteDao extends ConexaoDatabase{
      }
    
     public Cliente obter2(String cpf) throws ClassNotFoundException, SQLException {
-        String sql = "SELECT * FROM TB_CLIENTE WHERE CPF =? AND STATUS <> 'Inativo'";
+        String sql = "SELECT * FROM TB_CLIENTE WHERE CPF =?";
         
         Connection connection = null;
         PreparedStatement preparedStatement = null;
