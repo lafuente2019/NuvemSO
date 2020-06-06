@@ -86,19 +86,32 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="col-md-3 col-sm-2" style="top: 28px">
+                            
+                            <div class="dropdown col-md-2 col-sm-2">
                                 <div class="form-group">
-                                    <input class="btn btn-dark" type="submit" value="Pesquisar">
+                                    <label>Categoria</label>
+                                    <select name="categ" id="categ" class="form-control">
+                                        <option value="todas">Todas</option>
+                                        <option value="beleza">Beleza</option>
+                                        <option value="cosmeticos">Cosmeticos</option>
+                                        <option value="perfumes">Perfumes</option>
+                                        <option value="utensilios">Utensilios</option>
+                                    </select>
                                 </div>
                             </div>
-
+                            
                         </div>
                         <div class="row">
-                            <div class="offset-sm-0 col-md-2">
+                            <div class="col-md-2" style="top:10px; left: -20px">
                                 <label id="textoPadrao">Total:  </label>
                                 <label id="totalPesquisa" class="mascara-decimais" size="5px">0</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </div>
+                            
+                            <div class="offset-sm-7 col-sm-2">
+                        <button class="btn btn-dark btn-block" type="submit">Pesquisar
+                            <span class="ml-1 fas fa-search"></span>
+                        </button>
+                    </div>
                         </div>
                     </form>
                 </div><hr>
@@ -162,7 +175,7 @@
                     <th>Valor por Item</th>
                     </thead>
                     <tbody
-                        
+
                 </tbody>
             </table>
             <hr>
