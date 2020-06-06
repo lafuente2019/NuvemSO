@@ -24,11 +24,11 @@ public class RelatorioDao {
         try {
             Connection conexao = ConexaoDatabase.getConexao();
 
-            PreparedStatement ps = conexao.prepareStatement("select distinct v.id,c.nome as nome,v.data,v.qtd_itens,v.val_total,f.nome as colaborador,f.filial as filial from tb_venda as v "
-                    + " inner join tb_cliente as c on v.id_cliente = c.id "
-                    + " inner join tb_colaborador as f on v.id_funcionario = f.id "
-                    + " inner join tb_itensvenda as iv on v.id = iv.id_venda "
-                    + " inner join tb_produto as p on iv.id_produto = p.id "
+            PreparedStatement ps = conexao.prepareStatement("select distinct v.id,c.nome as nome,v.data,v.qtd_itens,v.val_total,f.nome as colaborador,f.filial as filial from TB_VENDA as v "
+                    + " inner join TB_CLIENTE as c on v.id_cliente = c.id "
+                    + " inner join TB_COLABORADOR as f on v.id_funcionario = f.id "
+                    + " inner join TB_ITENSVENDA as iv on v.id = iv.id_venda "
+                    + " inner join TB_PRODUTO as p on iv.id_produto = p.id "
                     + " where (c.nome like ?) and (f.filial like ?) and (p.categoria like ?) and (v.data >= ? and v.data<= ?)");
 
             ps.setString(1, cliente);
@@ -61,8 +61,8 @@ public class RelatorioDao {
         try {
             Connection conexao = ConexaoDatabase.getConexao();
 
-            PreparedStatement ps = conexao.prepareStatement("select iv.Id_Produto, p.Nome, iv.qtd_itens, p.Categoria, p.preco, iv.val_total from tb_itensVenda as iv"
-                    + " inner join tb_produto as p on iv.ID_PRODUTO = p.ID"
+            PreparedStatement ps = conexao.prepareStatement("select iv.Id_Produto, p.Nome, iv.qtd_itens, p.Categoria, p.preco, iv.val_total from TB_ITENSVENDA as iv"
+                    + " inner join TB_PRODUTO as p on iv.ID_PRODUTO = p.ID"
                     + " where iv.id_venda = ? and p.categoria like ?");
 
             ps.setInt(1, id);
