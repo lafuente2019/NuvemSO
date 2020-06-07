@@ -24,8 +24,8 @@
     <style>
         .empresa{
             position: absolute;
-            top:40%;
-            left: 60%;
+            top:50%;
+            left: 50%;
             margin-right: -50%;
             transform: translate(-50%, -50%);
         }
@@ -84,16 +84,16 @@
         </div>
      <div class="empresa">
         <p>A Perfumaria Muchachos está a mais de 15 anos no mercado, levando a todos os cantos do país nossos aromas e artigos decorativos.</p>
-        <p>Possuimos diversas linhas de produtos, desde produtos para aromaterapia, passando pela area decorativa e alcançando até mesmo o fornecimento de</p>
-        <p> produtos personalizados para grandes redes.Por sermos fábrica, possuímos uma grande flexibilidade de aromas e tipos de produtos.</p>
+        <p>Possuimos diversas linhas de produtos, desde produtos para aromaterapia, passando pela area decorativa e alcançando até mesmo o fornecimento</p>
+        <p>de produtos personalizados para grandes redes.Por sermos fábrica, possuímos uma grande flexibilidade de aromas e tipos de produtos.</p>
         <p>Nossos clientes contam com uma gama de produtos muito variada,sempre lancando novidades para suprir as demandas do mercado.</p> 
         <p>Convidamos você a conhecer nosso site e nossos produtos! Temos certeza de que não irá se arrepender!!</p>
         
         <div class="desen" >
           <h4>Desenvolvido por:</h4>
            <p>Diego Souza de Queiroz</p>
+           <p>Fabio Luiz Gabriel Vieira</p>
            <p>Valter Lafuente Junior</p>
-           <p>Fabio Vieira</p>
         </div>
      </div>  
      
