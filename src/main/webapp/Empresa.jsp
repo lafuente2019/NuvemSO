@@ -21,6 +21,19 @@
         <link href="css/start.css" rel="stylesheet">
         <!--Titulo e icone-->
     <title>Perfumaria Muchachos: Início do sistema</title>
+    <style>
+        .empresa{
+            position: absolute;
+            top:40%;
+            left: 60%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+        .empresa > p{
+            font-size: 25px;
+        }
+        
+    </style>
 </head>
 <body>
     <!--CABEÇALHO-->
@@ -69,12 +82,21 @@
                 <li><a class="item-linha" href="Empresa.jsp"><span class="fas fa-chart-bar mr-3"></span> Sobre a empresa</a></li>
             </ul>
         </div>
-    <!--CONTEUDO DA PAGINA-->
-    <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
-    <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-        <img id="img" src="img/perf1.jpg" height="600" width="600" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
-    </div>
-
+     <div class="empresa">
+        <p>A Perfumaria Muchachos está a mais de 15 anos no mercado, levando a todos os cantos do país nossos aromas e artigos decorativos.</p>
+        <p>Possuimos diversas linhas de produtos, desde produtos para aromaterapia, passando pela area decorativa e alcançando até mesmo o fornecimento de</p>
+        <p> produtos personalizados para grandes redes.Por sermos fábrica, possuímos uma grande flexibilidade de aromas e tipos de produtos.</p>
+        <p>Nossos clientes contam com uma gama de produtos muito variada,sempre lancando novidades para suprir as demandas do mercado.</p> 
+        <p>Convidamos você a conhecer nosso site e nossos produtos! Temos certeza de que não irá se arrepender!!</p>
+        
+        <div class="desen" >
+          <h4>Desenvolvido por:</h4>
+           <p>Diego Souza de Queiroz</p>
+           <p>Valter Lafuente Junior</p>
+           <p>Fabio Vieira</p>
+        </div>
+     </div>  
+     
     <!--1-jQuery.js-->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!--2-Popper.js-->
@@ -84,24 +106,4 @@
     <!--4-Específica da página-->
     <script type="text/javascript" src="js/start.js"></script>
 </body>
-<script>
-    var images = [];
-    images[0] = "img/perf1.jpg";
-    images[1] = "img/perf2.jpg";
-    images[2] = "img/perf3.jpg";
-    images[3] = "img/perf4.jpg";
-    images[4] = "img/perf5.jpg";
-
-    var i = 0;
-    setInterval(fadeDivs, 2000);
-
-    function fadeDivs() {
-        i = i < images.length - 1 ? i : 0;
-
-        $('#img').fadeOut(500, function () {
-            $(this).attr('src', images[i]).fadeIn(500);
-        })
-        i++;
-    }
-</script>
 </html>

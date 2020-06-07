@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <!--BARRA NAVEGACAO LATERAL-->
+         <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
@@ -70,6 +70,7 @@
                 <li><a class="item-linha" href="RelatoriosServlet"><span class="fas fa-chart-line mr-3"></span> Relatório Filial</a></li>
                 <p>Diretoria</p>
                 <li><a class="item-linha" href="RelatoriosServlet"><span class="fas fa-chart-bar mr-3"></span> Relatório Geral</a></li>
+                <li><a class="item-linha" href="Empresa.jsp"><span class="fas fa-chart-bar mr-3"></span> Sobre a empresa</a></li>
             </ul>
         </div>
         <!--CONTEUDO DA PAGINA-->
