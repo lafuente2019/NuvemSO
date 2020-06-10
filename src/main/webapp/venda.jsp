@@ -1,7 +1,7 @@
 <%-- 
     Document   : venda
     Created on : 30/04/2020, 21:50:51
-    Author     : Ramses
+    Author     : Valter Lafuente Junior
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
