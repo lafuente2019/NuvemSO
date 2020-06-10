@@ -83,7 +83,7 @@
                     <div class="col-sm-10 col-md-10">
                         <div class="form-group">
                             <label for="nome">Nome do Produto</label>
-                            <input id="nome" name="nome" type="text" class="form-control" maxlength="20" placeholder="Exemplo.: Ferrari black" required="">
+                            <input id="nome" name="nome" type="text" class="form-control" maxlength="40" placeholder="Exemplo.: Ferrari black" required="">
                         </div>
                     </div><!--Fim do Nome do Produto-->
                     <!--Ativo-->
@@ -115,7 +115,7 @@
                     <div class="col-sm-4">
                         <div class="form-group">
                             <label for="preco">Preço</label>
-                            <input id="preco" name="preco" type="number" class="form-control mascara-decimais" maxlength="6" placeholder="Exemplo.: 250.00" required >
+                            <input id="preco" name="preco"  class="form-control mascara-decimais" maxlength="6" placeholder="Exemplo.: 250.00" required >
                         </div>
                     </div><!--Fim do preco-->
                     <!--Quantidade-->
@@ -131,7 +131,7 @@
                     <!--Descricao-->
                     <div class="col-sm-12" >
                         <div class="form-group">
-                            <label for="quantidade">Descrição</label> 
+                            <label for="descricao">Descrição</label> 
                             <input id="descricao" name="descricao" type="text" class="form-control" maxlength="200" placeholder="Exemplo.: Produto para tratamento capilar" required>
                         </div>
                     </div><!--Fim Desricao-->

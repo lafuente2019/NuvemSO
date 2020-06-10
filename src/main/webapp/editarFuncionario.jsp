@@ -78,7 +78,6 @@
         <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
             <!--Formulário Geral-->
             <form id="formulario" class="formulario" action="funcionarioServlet" method="post">
-                <h1 class="titulo-formulario">${mensagem}</h1>
                 <h1 class="titulo-formulario">Editar Colaborador: ${funcionario.nome}</h1> 
                 <!--Linha 1-->
                 <div class="row linha-do-nome">
@@ -240,8 +239,8 @@
                             </div> 
                             <div class="col-md-6 col-sm-4">
                                 <div class="form-group">
-                                    <label>E-mail</label>
-                                    <input name="email" id="email" type="E-mail" class="form-control" value="${funcionario.email}" required>
+                                    <label>Email</label>
+                                    <input name="email" id="email" type="email" class="form-control" value="${funcionario.email}" required>
                                 </div>
                             </div>
                         </div><!--Fim Linha 5.1-->  

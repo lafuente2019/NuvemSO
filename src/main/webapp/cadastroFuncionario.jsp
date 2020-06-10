@@ -84,7 +84,7 @@
                     <div class="col-md-9 col-sm-9">
                         <div class="form-group">
                             <label>Nome</label>
-                            <input id="nome" name="nome" type="text" class="form-control" maxlength="30" placeholder="Exemplo.: Zlatan Ibrahimovic" required="">
+                            <input id="nome" name="nome" type="text" class="form-control" maxlength="50" placeholder="Exemplo.: Zlatan Ibrahimovic" required="">
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3">
@@ -231,7 +231,7 @@
                             <div class="col-md-6 col-sm-4">
                                 <div class="form-group">
                                     <label>E-mail</label>
-                                    <input name="email" id="email" type="text" class="form-control" placeholder="Exemplo.: muchachos@gmail.com" required>
+                                    <input name="email" id="email" type="text" class="form-control" maxlength="40" placeholder="Exemplo.: muchachos@gmail.com" required>
                                 </div>
                             </div>
                         </div><!--Fim Linha 5.1-->  
@@ -324,13 +324,40 @@
             </form><!--Fim do Form-->
 
         </div><!--Fim do conteudo da pagina-->
-
-        <!--1-jQuery.js-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+           <!--MODAL-->
+        <div class="modal fade modal" id="modalMensagem" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mensagem</h5>
+                        <button type="button" class="close fechar-modal"><!--data-dismiss="modal"-->
+                            <span class="fas fa-times"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="mensagem"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger btn-sm fechar-modal"><!--data-dismiss="modal"-->
+                            <span class="fas fa-times mr-2"></span>Fechar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!--1-jQuery.js-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <!--2-Popper.js-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <!--3-Bootstrap.js -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--4-Mask Money Plugin-->
+        <script src="https://cdn.rawgit.com/plentz/jquery-maskmoney/master/dist/jquery.maskMoney.min.js"></script>
+        <!--5-Mask CPF Plugin-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.12/jquery.mask.min.js"></script>
+        <!--6-Específica da página-->
         <script type="text/javascript" src="js/start.js"></script>
+        <script type="text/javascript" src="js/cadastroColaborador.js"></script>
+        <script type="text/javascript" src="js/validacao.js"></script>
     </body>
 </html>
