@@ -77,19 +77,21 @@ public class FuncionarioServlet extends HttpServlet {
 		}
 		try {
 			if(funcionario.getId() != null) {
-				 funcionarioDao.atualizar(funcionario);
-				 request.setAttribute("mensagem","Funcionario atualizado com sucesso!!!");
+			funcionarioDao.atualizar(funcionario);
+                        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/consultaFuncionario.jsp");
+                        dispatcher.forward(request,response);
+                        
 			}else {
-			 funcionarioDao.salvar(funcionario);
-			response.getWriter().write("O Cliente '"+funcionario.getNome()+"' foi cadastrado com sucesso!!!");
+			funcionarioDao.salvar(funcionario);
+			response.getWriter().write("O Colaborador '"+funcionario.getNome()+"' foi cadastrado com sucesso!!!");
 		  }
 		} catch (SQLException e) {
 			request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
-			 request.setAttribute("funcionario", funcionario);
+			request.setAttribute("funcionario", funcionario);
 	          }catch (ClassNotFoundException e) {
 			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
-			 request.setAttribute("funcionario", funcionario);
+			request.setAttribute("funcionario", funcionario);
 	   }
-		
+		        
     }
 }
