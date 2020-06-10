@@ -48,7 +48,7 @@
         <h1 id="calendario"></h1><!--Data e calendario feito em jquery - usa-se o id #calendario-->
         </div>
         <div class="col-lg-2 col-sm-2"><!--USUÁRIO-->
-          <h1><span class="fas fa-user"></span> Ramses Souza</h>
+          <h1><span class="fas fa-user"></span> Valter Lafuente Junior</h>
           </div>
           <div class="col-lg-1 col-sm-1"><!--SAIR DO SISTEMA-->
             <button type="button" class="btn btn-outline-dark" >Sair <span class="fas fa-sign-out-alt"></span></button>
@@ -81,7 +81,7 @@
       <!--CONTEUDO DA PAGINA-->
       <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
       <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-        <h1>Gerenciamento de Colaboradores</h1>
+        <h1>Consulta de Colaboradores</h1>
         <!--Formulário-->
         
           <form clas="formulario" action="buscarFuncionarioServlet"  method="get">  

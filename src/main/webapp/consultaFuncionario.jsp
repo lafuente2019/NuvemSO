@@ -82,7 +82,7 @@
         <!--CONTEUDO DA PAGINA-->
         <!--expandir/recolher, feito em jquery - usa o id #conteudo-pagina-->
         <div id="conteudo-pagina" class="container-fluid conteudo-pagina">
-            <h1>Gerenciamento de Colaboradores</h1>
+            <h1>Consulta de Colaboradores</h1>
             <!--Formulário-->
             <form id="formulario" class="formulario" action="buscarFuncionarioServlet"  method="get">  
                 <!--Linha 1-->
