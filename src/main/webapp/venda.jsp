@@ -48,7 +48,7 @@
                 <h1 id="funcionario"><span class="fas fa-user"></span>Ramses Souza</h>
             </div>
             <div class="col-lg-1 col-sm-1"><!--SAIR DO SISTEMA-->
-                <button type="button" class="btn btn-outline-dark" >Sair <span class="fas fa-sign-out-alt"></span></button>
+                <a class="btn btn-outline-dark" href="LogoutServlet" role="button">Sair <span class="fas fa-sign-out-alt"></span></a>
             </div>
         </div>
     </div>
