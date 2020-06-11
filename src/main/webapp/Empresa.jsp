@@ -20,46 +20,46 @@
         <!--Específica da Página-->
         <link href="css/start.css" rel="stylesheet">
         <!--Titulo e icone-->
-    <title>Perfumaria Muchachos: Início do sistema</title>
-    <style>
-        .empresa{
-            position: absolute;
-            top:50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-        }
-        .empresa > p{
-            font-size: 25px;
-        }
-        
-    </style>
-</head>
-<body>
-    <!--CABEÇALHO-->
-    <div class="container-fluid">
-        <div class="row cabecalho">
-            <div class="col-lg-2 col-sm-2"><!--BUTTON HUMBURGER-->
-                <button id="hamburger" type="button" class="btn btn-outline-dark"><span class="fas fa-bars"></span></button>
-            </div>
-            <div class="col-lg-3 col-sm-3"><!--LOGO CABEÇALHO-->
-                <!--Colorir logo efeito em jquery - usa-se o id #logocab-->
-              <a  href="start.jsp">
-                <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
-              </a>		
-            </div>
-            <div class="col-lg-3 col-sm-3"><!--HORA E DATA-->
-                <h1 id="calendario"></h><!--Data e calendario feito em jquery - usa-se o id #calendario-->
-            </div>
-            <div class="col-lg-2 col-sm-2"><!--USUÁRIO-->
-                <h1><span class="fas fa-user"></span> Ramses Souza</h>
-            </div>
-            <div class="col-lg-1 col-sm-1"><!--SAIR DO SISTEMA-->
-                <button type="button" class="btn btn-outline-dark" >Sair <span class="fas fa-sign-out-alt"></span></button>
+        <title>Perfumaria Muchachos: Início do sistema</title>
+        <style>
+            .empresa{
+                position: absolute;
+                top:50%;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+            }
+            .empresa > p{
+                font-size: 25px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--CABEÇALHO-->
+        <div class="container-fluid">
+            <div class="row cabecalho">
+                <div class="col-lg-2 col-sm-2"><!--BUTTON HUMBURGER-->
+                    <button id="hamburger" type="button" class="btn btn-outline-dark"><span class="fas fa-bars"></span></button>
+                </div>
+                <div class="col-lg-3 col-sm-3"><!--LOGO CABEÇALHO-->
+                    <!--Colorir logo efeito em jquery - usa-se o id #logocab-->
+                    <a  href="start.jsp">
+                        <img id="logocab" src="img/grupo-2.png" alt="Logo Muchachos Perfumaria">
+                    </a>		
+                </div>
+                <div class="col-lg-3 col-sm-3"><!--HORA E DATA-->
+                    <h1 id="calendario"></h><!--Data e calendario feito em jquery - usa-se o id #calendario-->
+                </div>
+                <div class="col-lg-2 col-sm-2"><!--USUÁRIO-->
+                    <h1><span class="fas fa-user"></span> Ramses Souza</h>
+                </div>
+                <div class="col-lg-1 col-sm-1"><!--SAIR DO SISTEMA-->
+                    <button type="button" class="btn btn-outline-dark" >Sair <span class="fas fa-sign-out-alt"></span></button>
+                </div>
             </div>
         </div>
-    </div>
-     <!--BARRA NAVEGACAO LATERAL-->
+        <!--BARRA NAVEGACAO LATERAL-->
         <div id="barra-lateral" class="barra-lateral"><!--expandir/recolher, feito em jquery - usa o id #barra-lateral-->
             <ul><!--Colorir botões ao apertar, feito em jquery - usa a classe .item-linha-->
                 <p>Vendas</p>
@@ -82,28 +82,52 @@
                 <li><a class="item-linha" href="Empresa.jsp"><span class="fas fa-chart-bar mr-3"></span> Sobre a empresa</a></li>
             </ul>
         </div>
-     <div class="empresa">
-        <p>A Perfumaria Muchachos está a mais de 15 anos no mercado, levando a todos os cantos do país nossos aromas e artigos decorativos.</p>
-        <p>Possuimos diversas linhas de produtos, desde produtos para aromaterapia, passando pela area decorativa e alcançando até mesmo o fornecimento</p>
-        <p>de produtos personalizados para grandes redes.Por sermos fábrica, possuímos uma grande flexibilidade de aromas e tipos de produtos.</p>
-        <p>Nossos clientes contam com uma gama de produtos muito variada,sempre lancando novidades para suprir as demandas do mercado.</p> 
-        <p>Convidamos você a conhecer nosso site e nossos produtos! Temos certeza de que não irá se arrepender!!</p>
-        
-        <div class="desen" >
-          <h4>Desenvolvido por:</h4>
-           <p>Diego Souza de Queiroz</p>
-           <p>Fabio Luiz Gabriel Vieira</p>
-           <p>Valter Lafuente Junior</p>
+
+        <div style="text-align: center"><div class="tabela">
+                <table id="tableVendas" class="table table-sm table-secondary table-hover table-striped">   
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nº de vendas</th>
+                            <th>Colaborador</th>
+                            <th>Filial</th>
+                        </tr>
+                    </thead>        
+                    <c:forEach var="v" items="${vendas}">
+
+                        <tr class="linha">
+                            <td >${v.numero}</td>
+                            <td>${v.cliente}</td>
+                            <td>${v.filial}</td>
+                        </tr>
+
+                    </c:forEach>
+
+                </table>
+
+            </div>
         </div>
-     </div>  
-     
-    <!--1-jQuery.js-->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!--2-Popper.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <!--3-Bootstrap.js-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <!--4-Específica da página-->
-    <script type="text/javascript" src="js/start.js"></script>
-</body>
+        <div class="empresa">
+            <p>A Perfumaria Muchachos está a mais de 15 anos no mercado, levando a todos os cantos do país nossos aromas e artigos decorativos.</p>
+            <p>Possuimos diversas linhas de produtos, desde produtos para aromaterapia, passando pela area decorativa e alcançando até mesmo o fornecimento</p>
+            <p>de produtos personalizados para grandes redes.Por sermos fábrica, possuímos uma grande flexibilidade de aromas e tipos de produtos.</p>
+            <p>Nossos clientes contam com uma gama de produtos muito variada,sempre lancando novidades para suprir as demandas do mercado.</p> 
+            <p>Convidamos você a conhecer nosso site e nossos produtos! Temos certeza de que não irá se arrepender!!</p>
+
+            <div class="desen" >
+                <h4>Desenvolvido por:</h4>
+                <p>Diego Souza de Queiroz</p>
+                <p>Fabio Luiz Gabriel Vieira</p>
+                <p>Valter Lafuente Junior</p>
+            </div>
+        </div>  
+
+        <!--1-jQuery.js-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!--2-Popper.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <!--3-Bootstrap.js-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!--4-Específica da página-->
+        <script type="text/javascript" src="js/start.js"></script>
+    </body>
 </html>

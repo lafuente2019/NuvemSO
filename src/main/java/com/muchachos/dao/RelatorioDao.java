@@ -3,6 +3,7 @@ package com.muchachos.dao;
 import com.muchachos.db.ConexaoDatabase;
 import com.muchachos.interfaces.RelatorioInterface;
 import com.muchachos.model.Detalhes;
+import com.muchachos.model.Ranking;
 import com.muchachos.model.Relatorio;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,10 +18,10 @@ import java.util.List;
  *
  * @author Fabio Vieira
  */
-public class RelatorioDao implements RelatorioInterface{
+public class RelatorioDao implements RelatorioInterface {
 
     @Override
-    public List<Relatorio> ObterTodosComFiltro(Timestamp dataDe, Timestamp dataPara, String filial, String cliente, String categoria)  throws ClassNotFoundException, SQLException{
+    public List<Relatorio> ObterTodosComFiltro(Timestamp dataDe, Timestamp dataPara, String filial, String cliente, String categoria) throws ClassNotFoundException, SQLException {
         List<Relatorio> relatorio = null;
         try {
             Connection conexao = ConexaoDatabase.getConexao();
@@ -82,12 +83,28 @@ public class RelatorioDao implements RelatorioInterface{
     }
 
     @Override
-    public void ObterRank() throws ClassNotFoundException, SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Ranking> ObterRank() throws ClassNotFoundException, SQLException {
+        List<Ranking> ranking = new ArrayList<>();
+
+        try {
+            Connection conexao = ConexaoDatabase.getConexao();
+
+            PreparedStatement ps = conexao.prepareStatement("SELECT COUNT(*)as qtd, v.ID_FUNCIONARIO, f.NOME as nome,f.FILIAL as filial FROM TB_VENDA as v "
+                    + "INNER JOIN TB_COLABORADOR as f on v.ID_FUNCIONARIO = f.ID "
+                    + "GROUP BY v.ID_FUNCIONARIO  ORDER BY v.ID_FUNCIONARIO DESC");
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                ranking.add(new Ranking(rs.getInt(1), rs.getString(3), rs.getString(4)));
+            }
+        } catch (SQLException sQLException) {
+            System.out.println(sQLException.toString());
+        } catch (Exception sQLException) {
+            System.out.println(sQLException.toString());
+        }
+
+        return ranking;
     }
 
     //RELATORIO DE VENDAS
-    
-
-
 }

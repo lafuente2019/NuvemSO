@@ -6,6 +6,7 @@
 package com.muchachos.interfaces;
 
 import com.muchachos.model.Detalhes;
+import com.muchachos.model.Ranking;
 import com.muchachos.model.Relatorio;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -22,6 +23,6 @@ public interface RelatorioInterface {
     
     public List<Detalhes> ObterDetalhes(int id, String categoria) throws ClassNotFoundException, SQLException;
     
-    public void ObterRank() throws ClassNotFoundException, SQLException;
+    public List<Ranking> ObterRank() throws ClassNotFoundException, SQLException;
     
 }
