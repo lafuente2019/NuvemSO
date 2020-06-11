@@ -66,6 +66,7 @@ public class FuncionarioDao implements FuncionarioInterface {
         statement.execute();
     }
 
+    @Override
     public List<Funcionario> obterComCargo() throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement ps = conexao.prepareStatement("Select cargo, filial, departamento, id, nome,cpf ,email, status from TB_COLABORADOR");
@@ -177,12 +178,39 @@ public class FuncionarioDao implements FuncionarioInterface {
                 listaFuncionario.add(F);
             }
 
-        } catch (Exception e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.getMessage();
             System.out.println(e);
         }
         return listaFuncionario;
     }
 
+    public Funcionario validar(String email, String senha) throws ClassNotFoundException, SQLException {
+        Funcionario funcionario = new Funcionario();
+        PreparedStatement ps = null;
+        Connection conexao = null;
+        ResultSet rs = null;
 
+        String sql = "SELECT * FROM TB_COLABORADOR WHERE email = ? and senha = ? ";
+        try {
+            conexao = ConexaoDatabase.getConexao();
+            ps = conexao.prepareStatement(sql);
+            ps.setString(1, email);
+            ps.setString(2, senha);
+
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                funcionario.setNome(rs.getString("email"));
+                funcionario.setSenha(rs.getString("senha"));
+
+            }
+
+        } catch (SQLException e) {
+            e.getMessage();
+            System.out.println(e);
+        }
+        return funcionario;
+    }
 }

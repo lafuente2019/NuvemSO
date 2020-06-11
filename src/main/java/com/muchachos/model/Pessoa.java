@@ -28,11 +28,12 @@ public class Pessoa {
 	public Pessoa() {
 
 	}
-	
-	public Pessoa(String nome) {
-		this.nome = nome;
-	}
 
+        public Pessoa(String email) {
+           this.email = email;
+    }
+
+	
 	public Pessoa(Integer id, String nome, String cpf, String rg, String sexo, String estadoCivil,
 			String dataNascimento, String estado, String cidade, String bairro, String logradouro, int numero,
 			String complemento, String telefone, String email, String status) {

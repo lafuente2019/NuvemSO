@@ -231,7 +231,7 @@
                             <div class="col-md-6 col-sm-4">
                                 <div class="form-group">
                                     <label>E-mail</label>
-                                    <input name="email" id="email" type="text" class="form-control" maxlength="40" placeholder="Exemplo.: muchachos@gmail.com" required>
+                                    <input name="email" id="email" type="email" class="form-control" maxlength="40" placeholder="Exemplo.: muchachos@gmail.com" required>
                                 </div>
                             </div>
                         </div><!--Fim Linha 5.1-->  
