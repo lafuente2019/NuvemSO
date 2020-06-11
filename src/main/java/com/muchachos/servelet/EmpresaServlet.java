@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Fabio
+ * @author Fabio Vieira
  */
-@WebServlet(urlPatterns = {"/Empresa.jsp"})
-public class RankingServlet extends HttpServlet {
+@WebServlet(name = "EmpresaServlet", urlPatterns = {"/EmpresaServlet"})
+public class EmpresaServlet extends HttpServlet {
 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
