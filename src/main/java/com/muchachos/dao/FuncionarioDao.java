@@ -202,7 +202,7 @@ public class FuncionarioDao implements FuncionarioInterface {
 
             while (rs.next()) {
 
-                funcionario.setNome(rs.getString("email"));
+                funcionario.setEmail(rs.getString("email"));
                 funcionario.setSenha(rs.getString("senha"));
 
             }
