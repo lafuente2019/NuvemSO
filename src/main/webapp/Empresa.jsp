@@ -12,7 +12,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name=viewport content="width=device-width, initial-scale=1">
-        <!--CSS -->D
+        <!--CSS -->
         <!--Fonts Awesome-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <!--Bootstrap-->
@@ -82,7 +82,8 @@
             </ul>
         </div>
 
-        <div style="text-align: center"><div class="tabela">
+        <div class="container-fluid col-md-3 col-sm-5" style="top: 15px; width: 800px;">
+            <div class="tabela">
                 <table id="tableVendas" class="table table-sm table-secondary table-hover table-striped">   
                     <thead class="thead-dark">
                         <tr>
