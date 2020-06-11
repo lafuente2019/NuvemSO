@@ -91,7 +91,7 @@ public class RelatorioDao implements RelatorioInterface {
 
             PreparedStatement ps = conexao.prepareStatement("SELECT COUNT(*)as qtd, v.ID_FUNCIONARIO, f.NOME as nome,f.FILIAL as filial FROM TB_VENDA as v "
                     + " INNER JOIN TB_COLABORADOR as f on v.ID_FUNCIONARIO = f.ID "
-                    + " GROUP BY v.ID_FUNCIONARIO, f.nome, f.filial  ORDER BY v.ID_FUNCIONARIO DESC");
+                    + " GROUP BY v.ID_FUNCIONARIO, f.nome, f.filial  ORDER BY v.ID_FUNCIONARIO DESC LIMIT 10");
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
