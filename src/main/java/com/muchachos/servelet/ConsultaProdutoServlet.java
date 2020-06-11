@@ -33,7 +33,7 @@ public class ConsultaProdutoServlet extends HttpServlet {
                 produtoDao.excluir(cod);
                 request.setAttribute("mensagem", "Produto Excluido com sucesso!!");
             }
-            request.setAttribute("produtos", produtoDao.getProduto1());
+            request.setAttribute("produtos", produtoDao.obterComPreco());
 
         } catch (SQLException e) {
             request.setAttribute("mensagem", "Erro de banco de dados");
@@ -54,7 +54,7 @@ public class ConsultaProdutoServlet extends HttpServlet {
         ProdutoDao produtoDao = new ProdutoDao();
         String json = null;
         try {
-            List<Produto> produtos = produtoDao.buscarDireito(nomeProduto);
+            List<Produto> produtos = produtoDao.buscarPorNome(nomeProduto);
             json = new Gson().toJson(produtos);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");

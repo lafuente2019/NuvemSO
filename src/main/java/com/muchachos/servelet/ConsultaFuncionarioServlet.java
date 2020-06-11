@@ -29,7 +29,7 @@ public class ConsultaFuncionarioServlet extends HttpServlet {
 	            funcionarioDao.excluir(cod);
                     request.setAttribute("mensagem", "Funcionario Excluido com sucesso!!");
                      }
-			request.setAttribute("funcionarios", funcionarioDao.getFuncionario1());
+			request.setAttribute("funcionarios", funcionarioDao.obterComCargo());
 			
 		} catch (SQLException e) {
 			request.setAttribute("mensagem","Erro de banco de dados");

@@ -1,6 +1,7 @@
 package com.muchachos.dao;
 
 import com.muchachos.db.ConexaoDatabase;
+import com.muchachos.interfaces.ItemVendaInterface;
 import com.muchachos.model.ItemVenda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +11,10 @@ import java.sql.SQLException;
  * 30/04/2020 22:11
  * @author Ramses
  */
-public class ItensVendaDao {
-    public static void salvar(ItemVenda itemVenda)throws ClassNotFoundException, SQLException {
+public class ItensVendaDao implements ItemVendaInterface {
+    
+    @Override
+    public void salvar(ItemVenda itemVenda)throws ClassNotFoundException, SQLException {
         
         String sql = "INSERT INTO TB_ITENSVENDA(id_venda, id_produto, "
                 + "qtd_itens, val_total) "

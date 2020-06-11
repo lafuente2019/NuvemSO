@@ -51,7 +51,7 @@ public class DetalhesServlet extends HttpServlet {
         String json = null;
 
         try {
-            List<Detalhes> products = detalhes.getDetalhes(id, categoria);
+            List<Detalhes> products = detalhes.ObterDetalhes(id, categoria);
             json = new Gson().toJson(products);
 
         } catch (SQLException e) {

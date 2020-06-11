@@ -1,6 +1,7 @@
 package com.muchachos.dao;
 
 import com.muchachos.db.ConexaoDatabase;
+import com.muchachos.interfaces.VendaInterface;
 import com.muchachos.model.Venda;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,8 +14,10 @@ import java.util.Date;
  * 30/04/2020 22:08
  * @author Ramses
  */
-public class VendaDao {
-    public static void salvar(Venda venda) throws ClassNotFoundException, SQLException {
+public class VendaDao implements VendaInterface {
+    
+    @Override
+    public void salvar(Venda venda) throws ClassNotFoundException, SQLException {
         
         String sql = "INSERT INTO TB_VENDA(id_cliente, id_funcionario, data,"
                 + " qtd_Itens, val_total, pag_dinheiro, pag_debito, pag_credito,"
@@ -45,7 +48,8 @@ public class VendaDao {
          }              
     }
     
-    public static Integer obterUltima() throws ClassNotFoundException, SQLException {
+    @Override
+    public Integer obterUltima() throws ClassNotFoundException, SQLException {
         
         String sql = "SELECT MAX(ID) qtdVendas FROM TB_VENDA";
         

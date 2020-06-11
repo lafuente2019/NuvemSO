@@ -1,6 +1,7 @@
 package com.muchachos.dao;
 
 import com.muchachos.db.ConexaoDatabase;
+import com.muchachos.interfaces.RelatorioInterface;
 import com.muchachos.model.Detalhes;
 import com.muchachos.model.Relatorio;
 import java.sql.Connection;
@@ -16,10 +17,10 @@ import java.util.List;
  *
  * @author Fabio Vieira
  */
-public class RelatorioDao {
+public class RelatorioDao implements RelatorioInterface{
 
-    //RELATORIO DE VENDAS
-    public List<Relatorio> getVendas(Timestamp dataDe, Timestamp dataPara, String filial, String cliente, String categoria) throws SQLException, ClassNotFoundException {
+    @Override
+    public List<Relatorio> ObterTodosComFiltro(Timestamp dataDe, Timestamp dataPara, String filial, String cliente, String categoria)  throws ClassNotFoundException, SQLException{
         List<Relatorio> relatorio = null;
         try {
             Connection conexao = ConexaoDatabase.getConexao();
@@ -55,7 +56,8 @@ public class RelatorioDao {
     }
 
     //DETALHE DE CADA VENDA
-    public List<Detalhes> getDetalhes(int id, String categoria) throws SQLException, ClassNotFoundException {
+    @Override
+    public List<Detalhes> ObterDetalhes(int id, String categoria) throws ClassNotFoundException, SQLException {
         List<Detalhes> iv = new ArrayList<>();
 
         try {
@@ -78,5 +80,14 @@ public class RelatorioDao {
         }
         return iv;
     }
+
+    @Override
+    public void ObterRank() throws ClassNotFoundException, SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    //RELATORIO DE VENDAS
+    
+
 
 }

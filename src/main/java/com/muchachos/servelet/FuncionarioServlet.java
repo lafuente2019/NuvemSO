@@ -30,10 +30,10 @@ public class FuncionarioServlet extends HttpServlet {
 		try {
                   if(acao != null && acao.equals("Editar")) {
 		    Integer cod = Integer.parseInt(id); 
-                    Funcionario funcionario = funcionarioDao.getFuncionarioId(cod);
+                    Funcionario funcionario = funcionarioDao.obterPorID(cod);
                     request.setAttribute("funcionario", funcionario);
 		}
-		request.setAttribute("funcionarios", funcionarioDao.getFuncionario());	
+		request.setAttribute("funcionarios", funcionarioDao.obterTodos());	
 			
 		} catch (SQLException e) {
 		request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());

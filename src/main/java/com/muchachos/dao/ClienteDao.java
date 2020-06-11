@@ -1,6 +1,7 @@
 package com.muchachos.dao;
 
 import com.muchachos.db.ConexaoDatabase;
+import com.muchachos.interfaces.ClienteInterface;
 import com.muchachos.model.Cliente;
 import com.muchachos.normalize.Normalize;
 import java.sql.Connection;
@@ -14,9 +15,10 @@ import java.util.List;
  * 12/05/2020
  * @author Otavio Barros
  */
-public class ClienteDao extends ConexaoDatabase{
+public class ClienteDao extends ConexaoDatabase implements ClienteInterface{
 
-    public void salvar(Cliente cliente) throws ClassNotFoundException, SQLException {
+    @Override
+    public void salvar(Cliente cliente) throws ClassNotFoundException, SQLException{
         String sql = "INSERT INTO TB_CLIENTE(nome, sexo, "
                 + "nascimento, estado_civil, status, rg, cpf, email, "
                 + "telefone, estado, cidade, bairro, cep, logradouro, "
@@ -54,7 +56,9 @@ public class ClienteDao extends ConexaoDatabase{
 			System.out.println(e);
       }
     }
-    public List<Cliente> listar() throws ClassNotFoundException, SQLException {
+    
+    @Override
+    public List<Cliente> obterTodos() throws ClassNotFoundException, SQLException {
         String sql = "SELECT id, nome, sexo, nascimento, estado_civil, status, rg, "
                 + "cpf, email, telefone, estado, cidade, bairro, cep, logradouro, "
                 + "numero, complemento FROM TB_CLIENTE";
@@ -104,7 +108,8 @@ public class ClienteDao extends ConexaoDatabase{
         return listaClientes;
     }
     
-    public List<Cliente> procurar(String nome) throws ClassNotFoundException, SQLException {
+    @Override
+    public List<Cliente> procurarPorNome(String nome) throws ClassNotFoundException, SQLException {
         String sql = "SELECT id, nome, sexo, nascimento, estado_civil, status, rg, "
                 + "cpf, email, telefone, estado, cidade, bairro, cep, logradouro, "
                 + "numero, complemento FROM TB_CLIENTE WHERE STATUS <> 'Inativo' and upper(nome) LIKE (?) OR CPF LIKE (?)";
@@ -153,7 +158,8 @@ public class ClienteDao extends ConexaoDatabase{
         return listaClientes;
     }
     
-    public Cliente obter(Integer id) throws ClassNotFoundException, SQLException {
+    @Override
+    public Cliente obterPorID(int id) throws ClassNotFoundException, SQLException {
         String sql = "SELECT * FROM TB_CLIENTE WHERE id =?";
         
         Connection connection = null;
@@ -196,7 +202,8 @@ public class ClienteDao extends ConexaoDatabase{
         return null;
      }
    
-    public Cliente obter2(String cpf) throws ClassNotFoundException, SQLException {
+    @Override
+    public Cliente obterPorCpf(String cpf) throws ClassNotFoundException, SQLException{
         String sql = "SELECT * FROM TB_CLIENTE WHERE CPF =?";
         
         Connection connection = null;
@@ -239,7 +246,8 @@ public class ClienteDao extends ConexaoDatabase{
         return null;
     }
     
-    public void atualizar(Cliente clienteAtualizado) throws ClassNotFoundException, SQLException {
+    @Override
+    public void atualizar(Cliente clienteAtualizado)throws ClassNotFoundException, SQLException {
         String sql = "UPDATE TB_CLIENTE SET nome = ?, sexo = ?, "
                 + "nascimento = ?, estado_civil = ?, status = ?, rg = ?, "
                 + "cpf = ?, email = ?, telefone = ?, estado = ?, cidade = ?, "
@@ -281,7 +289,8 @@ public class ClienteDao extends ConexaoDatabase{
         }
     }
     
-    public void excluir(Integer id) throws ClassNotFoundException, SQLException {
+    @Override
+    public void excluir(int id) throws ClassNotFoundException, SQLException{
         String sql = "DELETE FROM TB_CLIENTE WHERE id = ?";         
              
         Connection connection = null;
@@ -299,4 +308,7 @@ public class ClienteDao extends ConexaoDatabase{
 			System.out.println(e);
     }
   }
+
+
+
 }

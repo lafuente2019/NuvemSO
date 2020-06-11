@@ -28,10 +28,10 @@ public class ProdutoServlet extends HttpServlet {
         try {
             if (acao != null && acao.equals("Editar")) {
                 Integer cod = Integer.parseInt(id);
-                Produto produto = produtoDao.getProdutoId(cod);
+                Produto produto = produtoDao.obterPorID(cod);
                 request.setAttribute("produto", produto);
             }
-            request.setAttribute("produtos", produtoDao.getProduto());
+            request.setAttribute("produtos", produtoDao.obterTodos());
 
         } catch (SQLException e) {
             request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());

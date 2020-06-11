@@ -15,12 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/buscarFuncionarioServlet")
 public class BuscarFuncionarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
+	FuncionarioDao funcionarioDao = new FuncionarioDao();
+        
         @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	try {
-            List<Funcionario> listaFuncionario = FuncionarioDao.buscar(request.getParameter("Busca"));
+            List<Funcionario> listaFuncionario = funcionarioDao.buscarPorNome(request.getParameter("Busca"));
             request.setAttribute("listaFuncionario", listaFuncionario);	
 			
 	} catch (Exception e) {

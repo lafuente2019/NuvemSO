@@ -27,7 +27,7 @@ public class ConsultarClienteServlet extends HttpServlet {
         ClienteDao clienteDao = new ClienteDao();
         
         try{
-            List<Cliente> clientes = clienteDao.listar();
+            List<Cliente> clientes = clienteDao.obterTodos();
             request.setAttribute("clientes", clientes);
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/consultaCliente.jsp");
             dispatcher.forward(request,response);
@@ -56,7 +56,7 @@ public class ConsultarClienteServlet extends HttpServlet {
         //Pesquisa por CPF (usado na Venda)
         if (acao != null){
             try{
-                cliente = clienteDao.obter2(cpf);
+                cliente = clienteDao.obterPorCpf(cpf);
                 json = new Gson().toJson(cliente);
                 if(cliente==null){//se nao encontrar o CPF
                     response.setContentType("application/json");
@@ -77,13 +77,13 @@ public class ConsultarClienteServlet extends HttpServlet {
         }else{
             try{
                 if (campoPesquisa == null || "".equals(campoPesquisa) ){//se tiver vazio lista tudo    
-                    List<Cliente> clientes = clienteDao.listar();
+                    List<Cliente> clientes = clienteDao.obterTodos();
                     request.setAttribute("clientes", clientes);
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/consultaCliente.jsp");
                     dispatcher.forward(request,response);
 
                 }else{//pesquisa por parametro
-                    List<Cliente> clientes = clienteDao.procurar(campoPesquisa);
+                    List<Cliente> clientes = clienteDao.procurarPorNome(campoPesquisa);
                     request.setAttribute("clientes", clientes);
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/consultaCliente.jsp");
                     dispatcher.forward(request,response);  

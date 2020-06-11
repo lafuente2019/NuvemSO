@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/buscaProdutoServlet")
 public class BuscaProdutoServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
+    ProdutoDao produtoDao = new ProdutoDao();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            List<Produto> listaProduto = ProdutoDao.buscar(request.getParameter("Busca"));
+            List<Produto> listaProduto = produtoDao.buscarPorNome(request.getParameter("Busca"));
             request.setAttribute("listaProduto", listaProduto);
 
         } catch (Exception e) {

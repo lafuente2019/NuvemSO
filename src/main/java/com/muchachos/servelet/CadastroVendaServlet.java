@@ -68,7 +68,7 @@ public class CadastroVendaServlet extends HttpServlet {
         try{
             VendaDao vendaDao = new VendaDao();
             vendaDao.salvar(venda);
-            ultimaVenda = VendaDao.obterUltima();
+            ultimaVenda = vendaDao.obterUltima();
             String ultimaV = ultimaVenda.toString();
             response.getWriter().write(ultimaV);
         }catch (SQLException e){

@@ -1,6 +1,7 @@
 package com.muchachos.dao;
 
 import com.muchachos.db.ConexaoDatabase;
+import com.muchachos.interfaces.ProdutoInterface;
 import com.muchachos.model.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,9 +14,10 @@ import java.util.List;
  *
  * @author Diego Souza de Queiroz
  */
-public class ProdutoDao {
+public class ProdutoDao extends ConexaoDatabase implements ProdutoInterface {
 
-    public List<Produto> getProduto() throws SQLException, ClassNotFoundException {
+    @Override
+    public List<Produto> obterTodos() throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, quantidade, descricao, categoria, status From TB_PRODUTO");
 
@@ -28,6 +30,7 @@ public class ProdutoDao {
         return produtos;
     }
 
+    @Override
     public void salvar(Produto produto) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement statement = conexao.prepareStatement("insert into TB_PRODUTO (nome, preco, quantidade, descricao, categoria, status)" + "values(?,?,?,?,?,?)");
@@ -41,7 +44,8 @@ public class ProdutoDao {
         statement.execute();
     }
 
-    public List<Produto> getProduto1() throws SQLException, ClassNotFoundException {
+    @Override
+    public List<Produto> obterComPreco() throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, preco, quantidade, categoria, status from TB_PRODUTO");
 
@@ -58,7 +62,8 @@ public class ProdutoDao {
         return produtos;
     }
 
-    public void excluir(Integer cod) throws ClassNotFoundException, SQLException {
+    @Override
+    public void excluir(int cod) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement statement = conexao.prepareStatement("DELETE FROM TB_PRODUTO WHERE id = ?");
 
@@ -66,7 +71,8 @@ public class ProdutoDao {
         statement.execute();
     }
 
-    public Produto getProdutoId(Integer cod) throws SQLException, ClassNotFoundException {
+    @Override
+    public Produto obterPorID(int cod) throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, preco,quantidade,descricao,categoria,status FROM TB_PRODUTO WHERE id=?");
         ps.setInt(1, cod);
@@ -80,6 +86,7 @@ public class ProdutoDao {
         throw new SQLException("Codigo não encontrado: " + cod);
     }
 
+    @Override
     public void atualizar(Produto produto) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement statement = conexao.prepareStatement(
@@ -94,50 +101,9 @@ public class ProdutoDao {
         statement.setInt(7, produto.getId());
         statement.execute();
     }
-
-    public static List<Produto> buscar(String busca) throws SQLException, Exception {
-        String sql = "SELECT * FROM TB_PRODUTO WHERE upper(nome) like ? or upper(categoria) like ?";
-       busca = '%' + busca + '%';
-
-        List<Produto> listaProduto = null;
-        Connection conexao = null;
-        PreparedStatement ps = null;
-
-        ResultSet rs = null;
-        
-
-        try {
-            conexao = ConexaoDatabase.getConexao();
-            ps = conexao.prepareStatement(sql);
-            ps.setString(1, busca.toUpperCase());
-            ps.setString(2, busca.toUpperCase());
-
-            rs = ps.executeQuery();
-
-            while (rs.next()) {
-                if (listaProduto == null) {
-                    listaProduto = new ArrayList<>();
-                }
-                int id = rs.getInt("id");
-                String nome = rs.getString("nome");
-                float preco = rs.getFloat("preco");
-                int quantidade = rs.getInt("quantidade");
-                String categoria = rs.getString("categoria");
-                String status = rs.getString("status");
-
-                Produto P = new Produto(id, nome, preco, quantidade, categoria, status);
-                listaProduto.add(P);
-            }
-
-        } catch (SQLException e) {
-            e.getMessage();
-            System.out.println(e);
-        
-        }
-        return listaProduto;
-    }
-    
-    public static List<Produto> buscarDireito(String busca) throws SQLException, Exception {
+ 
+    @Override
+    public List<Produto> buscarPorNome(String busca) throws SQLException, Exception {
         String sql = "SELECT * FROM TB_PRODUTO WHERE upper(nome) like ? or upper(categoria) like ?";
         busca = '%' + busca + '%';
 
