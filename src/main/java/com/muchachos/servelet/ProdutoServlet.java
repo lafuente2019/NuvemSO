@@ -59,12 +59,13 @@ public class ProdutoServlet extends HttpServlet {
         }
         try {
             if (produto.getId() != null) {
-                
-                produtoDao.atualizar(produto);
-                request.setAttribute("mensagem", "Produto atualizado com sucesso!!!");
+               produtoDao.atualizar(produto);
+               RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/consultaProduto.jsp");
+               dispatcher.forward(request,response);
+           
             } else {
-                produtoDao.salvar(produto);
-                request.setAttribute("mensagem", "Produto salvo com sucesso!!!");
+               produtoDao.salvar(produto);
+               response.getWriter().write("O Produto '"+produto.getNome()+"' foi cadastrado com sucesso!!!");
             }
         } catch (SQLException e) {
             request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
@@ -74,7 +75,6 @@ public class ProdutoServlet extends HttpServlet {
             request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
             request.setAttribute("produto", produto);
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/cadastroProduto.jsp");
-        dispatcher.forward(request, response);
+            
     }
 }
