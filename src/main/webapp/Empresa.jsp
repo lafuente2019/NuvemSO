@@ -94,8 +94,8 @@
                     <c:forEach var="v" items="${vendas}">
 
                         <tr class="linha">
-                            <td >${v.numero}</td>
-                            <td>${v.cliente}</td>
+                            <td >${v.numVendas}</td>
+                            <td>${v.nome}</td>
                             <td>${v.filial}</td>
                         </tr>
 
